@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitstack</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+        <header>
+            <!--ハンバーガーボタン-->
+            <div id="navToggle">
+                <div>
+                    <span class="top"></span> 
+                    <span class="middle"></span> 
+                    <span class="bottom"></span>
+                </div>
+            </div>
+            <!--メニュー表示-->
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">MENU1</a></li>
+                    <li><a href="#">MENU2</a></li>
+                    <li><a href="#">MENU3</a></li>
+                    <li><a href="#">MENU4</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <main>
+            <%= yield %>
+        </main>
+        
+    </body>
+</html>

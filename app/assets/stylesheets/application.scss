@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+header {
+    height:50px;
+    background-color:rgb(223, 220, 220);
+    position:relative;
+    z-index:100;
+    
+    nav {
+        display:none;
+        position:absolute;
+        top:50px;
+    }
+    
+    nav > ul {
+        list-style:none;
+    }
+    
+}
+
+
+#navToggle {
+    // display:none; /*通常時は非表示にしておきます*/
+    position:absolute; /*bodyに対しての絶対位置指定です*/
+    right:13px;
+    top:13px;
+    width:30px;
+    height:25px;
+    cursor:pointer
+    
+    div {
+        position:relative;
+    }
+    span {
+        display:block;
+        position:absolute; /*#navToggle div に対して*/
+        width:100%;
+        border-bottom:solid 3px #999;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        transform: rotate(0deg);
+    }
+    span.top {
+        top:0;
+    }
+    span.middle {
+        top:11px;
+        
+    }
+    span.bottom {
+        top:22px;
+        
+    }
+}
+// ボタンを押した後のCSS
+#navToggle:hover {
+    span.top {
+        transform: translateY(2px);
+    }
+    
+    span.bottom {
+        transform: translateY(-2px);
+    }
+}
+
+#navToggle.is-open {
+    span.top {
+    transform: rotate(-45deg);
+    top:11px;
+  }
+    span.middle {
+    transform: translateX(10000px);
+  }
+    span.bottom {
+    transform: rotate(45deg);
+    top:11px;
+  }
+}
+
+
