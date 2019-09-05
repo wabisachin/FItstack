@@ -1,0 +1,25 @@
+<main id="show-user" class="container">
+    <section class="profile">
+        <%= form_for @user do |f| %>
+            <div class="image">
+                <% if @user.image.attached? %>
+                    <img src ="<%= rails_blob_path(@user.image) %>">
+                <% else %>
+                    <img src="/assets/sheep.png">
+                <% end %>
+                <%= f.file_field :image, placeholder: "画像アップロード" %>
+            </div>
+            <div class="name">
+                <%= f.label :name, "ユーザー名" %>
+                <%= f.text_field :name, placeholder: "" %>
+            </div>
+            <div class="email">
+                <%= f.label :email, "ユーザー名" %>
+                <%= f.text_field :email, placeholder: "" %>
+            </div>
+            <div class="submit">
+                <%= f.submit "変更" %>
+            </div>
+        <% end %>
+    </section>
+</main>
