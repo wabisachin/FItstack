@@ -1,0 +1,26 @@
+<main class="training-new">
+    <section class="container">
+        <%=  form_for [@user, @training] do |f| %>
+            <%= f.hidden_field :user_id, current_user.id %>
+            <div class="title">
+                <%= f.label :name, "トレーニング名" %>
+                <%= f.text_field :name, "", placeholder:"トレーニング名" %>
+            </div>
+            <div class="category">
+                <%= f.label :category_id, "部位名" %>
+                <%= f.text_field :category_id, "", placeholder:"部位名名" %>
+            </div>
+            <div class="weight">
+                <%= f.label :weight, "重量" %>
+                <%= f.text_field :weight, "", placeholder:"重量" %>
+            </div>
+            <div class="times">
+                <%= f.label :times, "回数" %>
+                <%= f.text_field :times, "", placeholder:"回数" %>
+            </div>
+            <div class="submit">
+                <%= f.submit "確定" %>
+            </div>
+        <% end %>
+    </section>
+</main>

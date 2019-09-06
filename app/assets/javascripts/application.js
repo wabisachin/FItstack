@@ -10,17 +10,30 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+
 //= require activestorage
-//= require turbolinks
-//= require_tree .
 //= require jquery3
+//= require rails-ujs
+//= require jquery.turbolinks
 //= require popper
 //= require bootstrap-sprockets
+//= require turbolinks
+//= require_tree .
 
-$(function() {
+//  以下コードはturbolinksによってページリロードした時にjsが発火しない為コメントアウト
+
+// $(function() {
+//     $('#navToggle').click(function(){
+//         $('nav').slideToggle();
+//         $('#navToggle').toggleClass('is-open')
+//     })
+// })
+
+$(document).on('turbolinks:load', function() {
     $('#navToggle').click(function(){
         $('nav').slideToggle();
         $('#navToggle').toggleClass('is-open')
     })
+    
+    
 })

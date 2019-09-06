@@ -25,13 +25,17 @@
                 <% if user_signed_in? %>
                     <ul>
                         <li>
-                            <%= link_to "マイページ",user_path(current_user) %>
+                            <%= link_to "マイページ","/mypage/#{current_user.id}" %>
+                        </li>
+                        <li>
+                            <%= link_to "ユーザー情報",user_path(current_user) %>
+                        </li>
+                        <li>
+                            <%= link_to "トレーニング登録",new_user_training_path(current_user) %>
                         </li>
                         <li>
                             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                         </li>
-                        <li><a href="#">MENU2</a></li>
-                        <li><a href="#">MENU3</a></li>
                         <li><a href="#">MENU4</a></li>
                     </ul>
                 <% else %>
@@ -43,8 +47,6 @@
                             <%= link_to "会員登録",new_user_registration_path %>
                             </li>
                         <li><a href="#">MENU2</a></li>
-                        <li><a href="#">MENU3</a></li>
-                        <li><a href="#">MENU4</a></li>
                     </ul>
                 <% end %>
                 
