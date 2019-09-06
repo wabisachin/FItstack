@@ -65,3 +65,9 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'jquery-turbolinks'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end

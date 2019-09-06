@@ -1,4 +1,4 @@
-<main class="training-new">
+<main id="training-new">
     <section class="container">
         <%=  form_for [@user, @training] do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
@@ -8,15 +8,15 @@
             </div>
             <div class="category">
                 <%= f.label :category_id, "部位名" %>
-                <%= f.text_field :category_id, placeholder:"部位名名" %>
+                <%= f.text_field :category_id, placeholder:"半角数字で入力して下さい" %>
             </div>
             <div class="weight">
                 <%= f.label :weight, "重量" %>
-                <%= f.text_field :weight, placeholder:"重量" %>
+                <%= f.text_field :weight, placeholder:"半角数字で入力して下さい" %>
             </div>
             <div class="times">
                 <%= f.label :times, "回数" %>
-                <%= f.text_field :times, placeholder:"回数" %>
+                <%= f.text_field :times, placeholder:"半角数字で入力して下さい" %>
             </div>
             <div class="submit">
                 <%= f.submit "確定" %>
