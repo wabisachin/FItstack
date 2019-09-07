@@ -7,5 +7,12 @@ Rails.application.routes.draw do
   resources :users
   resources :users, only: :show do 
     resources :trainings
+    
+    resources :trainings, only: :show do 
+      collection do
+        get :menu
+      end
+    end
+    
   end
 end

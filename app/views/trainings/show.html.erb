@@ -3,19 +3,14 @@
         <div class="title">
             <p class="text-center">トレーニングメニュー一覧</p>
         </div>
-        <div class="contents container">
-            <!--コンテンツをgridレイアウトで並べる-->
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    fdsafa
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    fdsafa
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    fdsafa
-                </div>
-            </div>
+        
+        <!--コンテンツをgridレイアウトで並べる,div括りだとrenderが繰り返されるたびに階層を上がってしまうのでsectionで括る-->
+        <section class="contents row">
+            <%= render partial: "training", collection: @trainings %>
+        </section>
+        
+        <div>
+            <%= link_to "＋トレーニングを追加", new_user_training_path(@user) %>
         </div>
     </section>
 </main>

@@ -1,4 +1,9 @@
 class TrainingsController < ApplicationController
+    def show
+        @trainings = Training.all
+        @user = User.find(params[:user_id])
+    end
+    
     def new
         @user = User.find(params[:user_id])
         @training = Training.new
