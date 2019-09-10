@@ -8,15 +8,15 @@
             </div>
             <div class="category">
                 <%= f.label :category_id, "部位名" %>
-                <%= f.text_field :category_id, placeholder:"半角数字で入力して下さい" %>
+                <%= f.text_field :category_id, placeholder:"部位を選択" %>
             </div>
             <div class="weight">
                 <%= f.label :weight, "重量" %>
-                <%= f.text_field :weight, type:"number", placeholder:"半角数字で入力して下さい" %>
+                <%= f.text_field :weight, type:"number", placeholder:"半角数字のみ" %>
             </div>
             <div class="times">
                 <%= f.label :times, "回数" %>
-                <%= f.text_field :times, type:"number", placeholder:"半角数字で入力して下さい" %>
+                <%= f.text_field :times, type:"number", placeholder:"半角数字のみ" %>
             </div>
             <div class="submit">
                 <%= f.submit "確定" %>
