@@ -1,16 +1,4 @@
-<main id="training-show">
-    <section class="menu container">
-        <div class="title">
-            <p class="text-center">トレーニングメニュー一覧</p>
-        </div>
-        
-        <!--コンテンツをgridレイアウトで並べる,div括りだとrenderが繰り返されるたびに階層を上がってしまうのでsectionで括る-->
-        <section class="contents row">
-            <%= render partial: "training", collection: @trainings %>
-        </section>
-        
-        <div>
-            <%= link_to "＋トレーニングを追加", new_user_training_path(@user) %>
-        </div>
-    </section>
-</main>
+データグラフを挿入
+編集、削除時にはポップアップを表示
+
+

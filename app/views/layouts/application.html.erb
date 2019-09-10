@@ -32,14 +32,18 @@
                         </li>
                         <li>
                             <%= link_to "トレーニング一覧",menu_user_trainings_path(current_user) %>
+                            
                         </li>
                         <li>
                             <%= link_to "トレーニング登録",new_user_training_path(current_user) %>
                         </li>
                         <li>
+                            <%= link_to "今日のトレーニング作成",new_user_training_path(current_user) %>
+                        </li>
+                        <li>
                             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                         </li>
-                        <li><a href="#">MENU4</a></li>
+                        
                     </ul>
                 <% else %>
                     <ul>

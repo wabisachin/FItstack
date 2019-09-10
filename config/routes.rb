@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   get 'mypage/:id' => 'top#mypage'
   resources :users
   resources :users, only: :show do 
-    resources :trainings
-    
-    resources :trainings, only: :show do 
+    resources :trainings do 
       collection do
         get :menu
       end
     end
+    
+    
+    
     
   end
 end

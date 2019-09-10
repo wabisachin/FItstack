@@ -1,7 +1,9 @@
-<main id="training-new">
+<main id="training-edit">
     <section class="container">
         <%=  form_for [@user, @training] do |f| %>
-            <%= f.hidden_field :user_id, value: current_user.id %>
+            <div class="user-profile">
+                <%= f.hidden_field :user_id, value: current_user.id %>
+            </div>
             <div class="title">
                 <%= f.label :name, "トレーニング名" %>
                 <%= f.text_field :name, placeholder:"トレーニング名" %>
@@ -12,14 +14,14 @@
             </div>
             <div class="weight">
                 <%= f.label :weight, "重量" %>
-                <%= f.text_field :weight, type:"number", placeholder:"半角数字で入力して下さい" %>
+                <%= f.text_field :weight, placeholder:"半角数字で入力して下さい" %>
             </div>
             <div class="times">
                 <%= f.label :times, "回数" %>
-                <%= f.text_field :times, type:"number", placeholder:"半角数字で入力して下さい" %>
+                <%= f.text_field :times, placeholder:"半角数字で入力して下さい" %>
             </div>
             <div class="submit">
-                <%= f.submit "確定" %>
+                <%= f.submit "決定" %>
             </div>
         <% end %>
     </section>
