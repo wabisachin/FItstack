@@ -31,14 +31,14 @@
                             <%= link_to "ユーザー情報",user_path(current_user) %>
                         </li>
                         <li>
-                            <%= link_to "トレーニング一覧",menu_user_trainings_path(current_user) %>
+                            <%= link_to "トレーニング一覧",top_user_trainings_path(current_user) %>
                             
                         </li>
                         <li>
                             <%= link_to "トレーニング登録",new_user_training_path(current_user) %>
                         </li>
                         <li>
-                            <%= link_to "今日のトレーニング作成",new_user_training_path(current_user) %>
+                            <%= link_to "今日のトレーニング作成",new_user_menu_path(current_user) %>
                         </li>
                         <li>
                             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

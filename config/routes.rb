@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   root to: 'top#index'
   get 'mypage/:id' => 'top#mypage'
   resources :users
+  
   resources :users, only: :show do 
+    resources :menus
     resources :trainings do 
       collection do
-        get :menu
+        get :top
       end
     end
-    
-    
-    
-    
   end
+  
 end

@@ -1,0 +1,28 @@
+<main id="new-menu">
+    <section class="title">
+        <h2>メニューの新規作成</h2>
+    </section>
+    
+    <section class="content">
+        <%= form_for [@user,@menu] do |f| %>
+            <%=  f.hidden_field :user_id, value: current_user.id %>
+            <div class="name">
+                <%= f.label :name %>
+                <%= f.text_field :name, placeholder: "メニュー名" %>
+            </div>
+            
+            <div class="trainings">
+                ここに要素を追加していく
+            </div>
+            
+            <div class="add-training">
+                <a class="add">+種目の追加</a>
+                <hr>
+            </div>
+            
+            <div class="submit">
+                <%= f.submit "決定" %>
+            </div>
+        <% end %>
+    </section>
+</main>

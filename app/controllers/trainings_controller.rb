@@ -1,5 +1,5 @@
 class TrainingsController < ApplicationController
-    def menu
+    def top
         @user = User.find(params[:user_id])
         @trainings = @user.trainings
     end

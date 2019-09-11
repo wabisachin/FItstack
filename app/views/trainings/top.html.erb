@@ -1,12 +1,12 @@
 <main id="training-show">
     <!--筋トレの種類-->
-    <section class= "item container">
+    <section class= "trainings container">
         <div class="title">
             <p class="text-center">トレーニング種目一覧</p>
         </div>
         
         <!--コンテンツをgridレイアウトで並べる,div括りだとrenderが繰り返されるたびに階層を上がってしまうのでsectionで括る-->
-        <section class="contents row">
+        <section class="items row">
             <%= render partial: "training", collection: @trainings %>
         </section>
         
@@ -14,12 +14,15 @@
             <%= link_to "＋トレーニング種目の追加", new_user_training_path(@user) %>
         </div>
     </section>
-    <!--トレーニングコースの種類-->
-    <section class="course container">
+    <!--トレーニングmenuの種類-->
+    <section class="menus container">
         <div class="title">
             <p class="text-center">トレーニングメニュー一覧</p>
         </div>
-        <div class="add-course">
+        <section class="items row">
+            <%= render partial: "training", collection: @trainings %>
+        </section>
+        <div class="add-item">
             <%= link_to "＋トレーニングメニューの追加","" %>
         </div>
     </section>
