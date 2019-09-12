@@ -11,7 +11,7 @@
                 <%= f.text_field :name, placeholder: "メニュー名" %>
             </div>
             
-            <div class="trainings">
+            <div class="training-items">
                 ここに要素を追加していく
             </div>
             
@@ -25,4 +25,14 @@
             </div>
         <% end %>
     </section>
+    
+    <!--モーダルの記述-->
+    <section id="modal" class="hide">
+        <section class="items row">
+            <%= render partial: "training", collection: @trainings %>
+        </section>
+    </section>
+    
+    
+    <%= javascript_include_tag 'menus.js' %>
 </main>

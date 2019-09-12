@@ -1,7 +1,10 @@
 class MenusController < ApplicationController
     def new
         @user = User.find(params[:user_id])
+        @trainings = @user.trainings
         @menu = Menu.new
+        # jsファイル内でtrainingsデータを使用するための変数
+        gon.trainings = @trainings
     end
     
     def create

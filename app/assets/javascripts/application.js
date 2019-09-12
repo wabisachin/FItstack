@@ -18,7 +18,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
+
 
 //  以下コードはturbolinksによってページリロードした時にjsが発火しない為コメントアウト
 
@@ -34,6 +34,4 @@ $(document).on('turbolinks:load', function() {
         $('nav').slideToggle();
         $('#navToggle').toggleClass('is-open')
     })
-    
-    
 })

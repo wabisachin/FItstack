@@ -1,0 +1,31 @@
+// $(document).on('turbolinks:load', function() {
+//     $('.add').click(function(){
+//         $('h2').css('color','red');
+//     })
+// })
+$(function(){
+    // Menuに追加するtrainingのDOMの生成
+    
+    // gem "gon"によってrailsコントローラ内で定義した変数をjsで取得
+    let trainings = gon.trainings;
+    
+    // 「+種目を追加」ボタンのクリックイベント
+    $('.add').click(function(){
+        // modalの表示処理
+        $('#modal').removeClass('hide');
+        $('#modal').addClass('show');
+    })  
+    
+    // modal内にあるトレーニング種目のパネルそれぞれのクリックイベント
+    trainings.forEach(function(training) {
+        $(`#item-${training.id}`).click(function(){
+            let item = `<div class="training-item">${training.name}</div>`;
+            $('.training-items').append(item);
+            // modalの非表示処理
+            $('#modal').removeClass('show');
+            $('#modal').addClass('hide');
+        })
+    })
+    
+})
+

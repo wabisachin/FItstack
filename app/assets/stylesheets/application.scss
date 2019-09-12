@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ 
+ 
+//  以下,機能に関するcss
+.hide {
+    display:none;
+}
+.show {
+    display:block;
+}
+ 
+//  以下、application.html.erbのcss
 header {
     background-color:rgb(165, 232, 232);
     h2 {
