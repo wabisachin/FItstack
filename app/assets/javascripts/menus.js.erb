@@ -19,8 +19,20 @@ $(function(){
     // modal内にあるトレーニング種目のパネルそれぞれのクリックイベント
     trainings.forEach(function(training) {
         $(`#item-${training.id}`).click(function(){
-            let item = `<div class="training-item">${training.name}</div>`;
+            let html_content = 
+            `<div class="name">${training.name}</div>`+
+            `<input type="hidden" name=menu[training_menus_attributes[][training_id]] value=${training.id} id="new_menu">`+
+            `<input type="input" name=menu[training_menus_attributes[][weight]] id="new_menu">kg`+
+            `<input type="input" name=menu[training_menus_attributes[][times]] id="new_menu">回`
+            
+            
+            
+            let item = `<div class="training-item">${html_content}</div>`;
+            // let item = $('<div class="training-item">')
+            // let item_name = training.name
             $('.training-items').append(item);
+            // $('.training-item').append(item_name);
+            
             // modalの非表示処理
             $('#modal').removeClass('show');
             $('#modal').addClass('hide');
